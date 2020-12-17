@@ -949,11 +949,49 @@ h1 {
    скелиться до своего размера будет*/
  }
 
-.modal-close {
+.modal-close-btn {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 8px;
   right: 8px;
+  background-color: var(--text-color-white);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+    
 }
+
+.modal-icon-close {
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  width: 11px;
+  height: 11px;
+  background-color: var(--text-color-white);
+}
+
+.modal-close-btn:focus  {
+  fill: var(--bt-second);
+  border-color: var(--bt-second);
+}
+
+.modal-icon {
+  position: absolute;
+  top: 70%;
+  left: 15px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+}
+
 
  /* ******запрещает выделять текст**** */
    /* user-select: none */
@@ -962,11 +1000,9 @@ h1 {
 
  /* !!!!!!!!!!!!!****ФОРМА в модалке ********!!!!!!!!!*/
 
-
-
+ 
 .form {
   width: 528px;
-  margin-top: 10px;
   padding-right: 40px;
   padding-left: 40px;
 }
@@ -974,10 +1010,10 @@ h1 {
 .modal-title {
   text-align: center;
   margin-bottom: 0;
-  margin-top: 51px;
+  margin-top: 45px;
   font-weight: bold;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 1.15px;
   letter-spacing: 0.03em;
 }
 
@@ -985,22 +1021,43 @@ h1 {
 .form-group {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-.form-group input {
+.form-input {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
   height: 40px;
+  padding: 11px 42px;
 }
 
-.form-group label {
+.form-input:focus  {
+ outline-color: #2196F3;
+ cursor: pointer;
+}
+
+.form-input:focus + .modal-icon {
+  fill: #2196F3;
+}
+.form-group textarea:focus {
+  outline-color: #2196F3;
+ cursor: pointer;
+ color: var(--text-color-black);
+}
+
+
+.form-label {
 font-size: 12px;
 line-height: 14px;
 letter-spacing: 0.01em;
 color: #757575;
 margin-top: 10px;
 margin-bottom: 4px;
+}
+
+.form-input:focus {
+  border-color: var(--bt-second);
 }
 
 .form-group textarea {
@@ -1010,22 +1067,56 @@ margin-bottom: 4px;
   box-sizing: border-box;
   border-radius: 4px;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.67;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
 .form-policy {
-  margin-top: 32px;
+  position: relative;
+  margin-top: 20px;
   margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.67;
+  letter-spacing: 0.03em;
+  color: #757575;
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; */
+}
+
+.policy-checkbox {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+}
+
+
+.icon-policy {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--text-color-black);
+  background-color: chartreuse;
+}
+
+.policy-link {
+  margin-left: 5px;
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 .btn-modal-form{
   display: inline-block;
   padding: 10px 32px;
   width: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 124px;
+  margin-right: 124px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -1036,8 +1127,6 @@ margin-bottom: 4px;
   color: var(--text-color-white);
   background-color: var(--bt-second);
   cursor: pointer;
-
-
 }
 
 
@@ -1053,9 +1142,8 @@ margin-bottom: 4px;
 .footer-form {
   display: block;
   align-items: center;
-  vertical-align: baseline;
+  /* vertical-align: baseline; */
   width: 570px;
-  /* height: 86px; */
   margin-left: 93px;
   margin-left: 93px;
 }
