@@ -1009,7 +1009,7 @@ h1 {
 
 .modal-title {
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   margin-top: 45px;
   font-weight: bold;
   font-size: 20px;
@@ -1072,37 +1072,54 @@ margin-bottom: 4px;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-policy {
-  position: relative;
-  margin-top: 20px;
+.policy {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
   margin-bottom: 30px;
   font-size: 14px;
   line-height: 1.67;
   letter-spacing: 0.03em;
   color: #757575;
+  margin-left: 25px;
   /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px; */
 }
 
 .policy-checkbox {
   position: absolute;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
+.policy-checkbox:checked + .icon-policy {
+  background-color: var(--accent-color);
+  background-image: url(./images/icon\ check\ \(3\).svg);
+  background-size: contain;
+  background-origin: border-box;
+  border-color:  var(--accent-color);
+}
 
 .icon-policy {
-  position: relative;
+  position: absolute ;
   display: inline-block;
   text-align: center;
+  top: 76%;
+  left: 38px;
+  transform: translateY(-50%);
   width: 15px;
   height: 15px;
-  border: 2px solid var(--text-color-black);
-  background-color: chartreuse;
+  border: 2px solid var(--text-color-black);  
+  border-radius: 2px;
+  background-color: var(--text-color-white);
+
 }
 
 .policy-link {
@@ -1121,7 +1138,6 @@ margin-bottom: 4px;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
   color: var(--text-color-white);
@@ -1129,6 +1145,10 @@ margin-bottom: 4px;
   cursor: pointer;
 }
 
+.btn-modal-form:hover {
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+cursor: pointer;
+}
 
  /* !!!!!!!!!!!!!****ФОРМА в FOOTER ********!!!!!!!!!*/
 
@@ -1170,10 +1190,15 @@ margin-bottom: 4px;
   letter-spacing: 0.06em;
   color: var(--text-color-white);
   background-color: var(--bt-second);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  cursor: pointer;
 }
+
+.btn-footer:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 
 .send-icon{
   width: 24px;
